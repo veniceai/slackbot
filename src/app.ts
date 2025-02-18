@@ -39,7 +39,7 @@ const limiter = rateLimit({
 });
 
 app.use((req, res, next) => {
-  if (process.env.NODE_ENV === 'production' && !req.secure) {
+  if (process.env.NODE_ENV === 'production' && !req.secure && !process.env.BYPASS_HTTPS_REDIRECT) {
     return res.redirect('https://' + req.headers.host + req.url);
   }
   next();

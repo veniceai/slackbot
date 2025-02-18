@@ -20,4 +20,6 @@ services:
         sync: false
       - key: CLIENT_ID
         sync: false
+      - key: BYPASS_HTTPS_REDIRECT
+        sync: false
     autoDeploy: true

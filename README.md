@@ -56,6 +56,7 @@ VENICE_API_KEY=your_api_key_here
 SLACK_BOT_TOKEN=your_bot_token_here
 APP_ID=your_app_id_here
 CLIENT_ID=your_client_id_here
+BYPASS_HTTPS_REDIRECT=boolean
 ```
 
 ## Slack App Configuration
