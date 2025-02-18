@@ -10,8 +10,8 @@
     "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
     "start:prod": "node dist/app.js",
-    "render-build": "npm ci && npm run build",
-    "render-start": "npm run start:prod",
+    "render-build": "yarn install --frozen-lockfile && yarn build",
+    "render-start": "yarn start",
     "test": "jest",
     "test:watch": "jest --watch"
   },
