@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .ts",
     "type-check": "tsc --noEmit",
     "start:prod": "node dist/app.js",
-    "render-build": "yarn install --frozen-lockfile && yarn build",
+    "render-build": "yarn install --frozen-lockfile --production=false && yarn build",
     "render-start": "yarn start",
     "test": "jest",
     "test:watch": "jest --watch"
