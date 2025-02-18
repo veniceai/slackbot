@@ -7,7 +7,10 @@ export const eventHandler = async (req: Request, res: Response): Promise<void> =
       res.status(400).json({ error: 'Bad Request - Missing challenge parameter' });
       return;
     }
-    res.json({ challenge: req.body.challenge });
+
+    // Respond with JSON format as specified in Slack docs
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json({ challenge: req.body.challenge });
     return;
   }
 
