@@ -11,25 +11,15 @@ export const slackSignatureVerification = (
   res: Response,
   next: NextFunction,
 ): Response | void => {
-  console.log('Verifying Slack signature for:', req.path);
-
-  const timestamp = req.header('x-slack-request-timestamp');
-  const signature = req.header('x-slack-signature');
-
-  if (!timestamp || !signature) {
-    console.error('Missing headers:', { signature, timestamp });
-    return res.status(400).json({ error: 'Missing required Slack headers' });
-  }
-
-  // Log headers to help debug
-  console.log('Slack headers:', {
-    method: req.method,
-    path: req.path,
-    signature,
-    timestamp,
-  });
-
   try {
+    const timestamp = req.header('x-slack-request-timestamp');
+    const signature = req.header('x-slack-signature');
+
+    if (!timestamp || !signature) {
+      console.error('Missing headers:', { signature, timestamp });
+      return res.status(400).json({ error: 'Missing required Slack headers' });
+    }
+
     if (!process.env.SLACK_SIGNING_SECRET) {
       console.error('SLACK_SIGNING_SECRET not set');
       return res.status(500).json({ error: 'Internal server error' });

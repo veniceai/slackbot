@@ -196,6 +196,8 @@ This project is configured for deployment on [Render.com](https://render.com).
 4. Add environment variables in Render dashboard
 5. Render will automatically deploy when you push to main
 
+**Note**: When deploying to Render's free tier, you must set `BYPASS_HTTPS_REDIRECT=true`
+
 The `render.yaml` configuration handles:
 
 - Build and start commands
