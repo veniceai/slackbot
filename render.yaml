@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: venice-slack-bot
+    env: node
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/app.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: SLACK_SIGNING_SECRET
+        sync: false
+      - key: VENICE_API_KEY
+        sync: false
+      - key: SLACK_BOT_TOKEN
+        sync: false
+      - key: APP_ID
+        sync: false
+      - key: CLIENT_ID
+        sync: false
+      - key: BYPASS_HTTPS_REDIRECT
+        sync: false
+    autoDeploy: true
