@@ -167,6 +167,21 @@ Available style presets:
 3D Model, Abstract, Advertising, Alien, Analog Film, Anime, Architectural, Cinematic, Collage, Comic Book, Craft Clay, Cubist, Digital Art, Disco, Dreamscape, Dystopian, Enhance, Fairy Tale, Fantasy Art, Fighting Game, Film Noir, Flat Papercut, Food Photography, Gothic, GTA, Graffiti, Grunge, HDR, Horror, Hyperrealism, Impressionist, Isometric Style, Kirigami, Legend of Zelda, Line Art, Long Exposure, Lowpoly, Minecraft, Minimalist, Monochrome, Nautical, Neon Noir, Neon Punk, Origami, Paper Mache, Paper Quilling, Papercut Collage, Papercut Shadow Box, Photographic, Pixel Art, Pokemon, Pointillism, Pop Art, Psychedelic, Real Estate, Renaissance, Retro Arcade, Retro Game, RPG Fantasy Game, Silhouette, Space, Stacked Papercut, Stained Glass, Steampunk, Strategy Game, Street Fighter, Super Mario, Surrealist, Techwear Fashion, Texture, Thick Layered Papercut, Tilt-Shift, Tribal, Typography, Watercolor, Zentangle
 ```
 
+## Tips & Known Behavior
+
+### Response Streaming
+
+Currently, Clawdbot doesn't truly stream tokens in real-time. You may notice the bot shows a few initial items, then flashes red (indicating processing), and later dumps a larger chunk of output. This is expected behavior due to how the bot batches responses.
+
+### Telegram Bot Streaming (API 9.3+)
+
+For those interested in Telegram integration, Bot API 9.3 introduced `sendMessageDraft` which enables real-time streaming responses similar to ChatGPT:
+
+- The bot shows a typing bubble that updates in real-time as it generates text
+- This provides a much smoother user experience for long responses
+
+> **Note**: The official Telegram docs can be confusing for implementing streaming. See [this helpful thread by @altryne](https://x.com/altryne/status/2016382445114032583) for clearer implementation instructions.
+
 ## Development
 
 ```bash
