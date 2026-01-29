@@ -179,9 +179,8 @@ For those interested in Telegram integration, Bot API 9.3 introduced `sendMessag
 
 - The bot shows a typing bubble that updates in real-time as it generates text
 - This provides a much smoother user experience for long responses
-- Reference: [Telegram Bot API 9.3 Release](https://core.telegram.org/bots/api#december-4-2025)
 
-> **Note**: The official Telegram docs can be confusing for implementing streaming. Look for community guides and examples for clearer implementation steps.
+> **Note**: The official Telegram docs can be confusing for implementing streaming. See [this helpful thread by @altryne](https://x.com/altryne/status/2016382445114032583) for clearer implementation instructions.
 
 ## Development
 
